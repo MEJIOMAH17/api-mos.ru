@@ -1,4 +1,6 @@
-/* 
+import com.fasterxml.jackson.annotation.JsonProperty
+
+/*
 Copyright (c) 2020 Kotlin Data Classes Generated from JSON powered by http://www.json2kotlin.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -11,15 +13,18 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 
 data class Flat (
-	val flat_id : String,
+	@JsonProperty("flat_id")
+	val flatId : String,
 	val name : String,
 	val address : String,
 	val flat_number : String,
 	val unom : String,
 	val unad : String,
 	val paycode : String,
-	val electro_account : String,
-	val electro_device : String,
+	@JsonProperty("electro_account")
+	val electroAccount : String,
+	@JsonProperty("electro_device")
+	val electroDevice : String,
 	val intercom : String,
 	val floor : String,
 	val entrance_number : String
