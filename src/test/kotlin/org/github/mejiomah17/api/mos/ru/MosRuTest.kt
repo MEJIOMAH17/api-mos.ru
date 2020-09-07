@@ -5,7 +5,9 @@ import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.string.shouldStartWith
 import okhttp3.OkHttpClient
 import org.github.mejiomah17.api.mos.ru.model.epd.EpdType
+import org.github.mejiomah17.api.mos.ru.model.epd.Section
 import org.junit.jupiter.api.Test
+import java.io.File
 import java.time.YearMonth
 
 
@@ -21,9 +23,9 @@ class MosRuTest {
             .build()
         val mosRu = MosRu.create(login, password, client)
         val flats = mosRu.getFlats()
-        flats shouldHaveSize  2
+        flats shouldHaveSize 2
         val flat = flats.first().flatId
-        val epd=mosRu.getEpd(YearMonth.of(2020, 8), flat, EpdType.CURRENT)
+        val epd = mosRu.getEpd(YearMonth.of(2020, 8), flat, EpdType.CURRENT)
         epd?.pdf shouldStartWith "https"
 
     }
